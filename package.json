@@ -1,13 +1,14 @@
 {
-  "name": "mvc_design",
-  "version": "1.0.0",
+  "name": "eat-da-burger",
+  "version": "1.0.6",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.14.2",
     "express": "^4.13.3",
@@ -20,5 +21,13 @@
   "devDependencies": {
     "gulp-babel": "^7.0.1",
     "handlebars-helper-css": "^0.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PMatrixMedia/eat-dat-burger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PMatrixMedia/eat-dat-burger/issues"
+  },
+  "homepage": "https://github.com/PMatrixMedia/eat-dat-burger#readme"
 }
