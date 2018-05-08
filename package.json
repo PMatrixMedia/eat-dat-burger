@@ -18,6 +18,7 @@
     "mysql2": "^1.5.3"
   },
   "devDependencies": {
+    "gulp-babel": "^7.0.1",
     "handlebars-helper-css": "^0.1.0"
   }
 }
