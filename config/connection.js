@@ -36,11 +36,6 @@ function readData() {
             }
             console.log('Done.');
         })
-    conn.end(
-        function (err) {
-            if (err) throw err;
-            else console.log('Closing connection.')
-        });
 };
 
-module.exports = connection;
+module.exports = conn;

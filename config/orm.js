@@ -1,5 +1,5 @@
 // Import MySQL connection.
-var connection = require("../config/connection.js");
+var conn = require("../config/connection.js");
 
 // Helper function for SQL syntax.
 // Let's say we want to pass 3 values into the mySQL query.
@@ -29,8 +29,7 @@ function objToSql(ob) {
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
-      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-      // e.g. {sleepy: true} => ["sleepy=true"]
+      
       arr.push(key + "=" + value);
     }
   }
@@ -43,7 +42,7 @@ function objToSql(ob) {
 var orm = {
   all: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
-    connection.query(queryString, function(err, result) {
+    conn.query(queryString, function(err, result) {
       if (err) {
         throw err;
       }
@@ -62,7 +61,7 @@ var orm = {
 
     console.log(queryString);
 
-    connection.query(queryString, vals, function(err, result) {
+    conn.query(queryString, vals, function(err, result) {
       if (err) {
         throw err;
       }
@@ -70,7 +69,7 @@ var orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {ingredents, devoured}
+  // An example of objColVals would be {Burger_name, devoured}
   update: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
@@ -80,7 +79,7 @@ var orm = {
     queryString += condition;
 
     console.log(queryString);
-    connection.query(queryString, function(err, result) {
+    conn.query(queryString, function(err, result) {
       if (err) {
         throw err;
       }
