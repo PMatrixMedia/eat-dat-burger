@@ -40,23 +40,29 @@ function readData() {
         })
    
 };
-
-function updateData() {
-    conn.query('UPDATE burgers SET Burger_name = ?, devoured = ?'[Burger_name, devoured],
-        function (err, results, fields) {
-            if (err) throw err;
-            else console.log('Updated ' + results.affectedRows + ' row(s).');
-        })
-   
-};
+;
 
 function insertData() {
     
-    conn.query('INSERT INTO burgers (Burger_name) VALUES (?);', ['prime rib, cheese whiz, mayo,green pepper,onion'],
+    conn.query('INSERT INTO burgers (Burger_name) VALUES (?);', ['ham, swiss, mayo,green pepper,onion'],
         function (err, results, fields) {
             if (err) throw err;
             console.log('Inserted ' + results.affectedRows + ' row(s).');
         })
+
+    conn.query('INSERT INTO burgers (Burger_name) VALUES (?);', ['pBj & venison'],
+        function (err, results, fields) {
+            if (err) throw err;
+            console.log('Inserted ' + results.affectedRows + ' row(s).');
+        })
+
+
+    conn.query('INSERT INTO burgers (Burger_name) VALUES (?);', ['chicken philly'],
+        function (err, results, fields) {
+            if (err) throw err;
+            console.log('Inserted ' + results.affectedRows + ' row(s).');
+        })
+
 };
 
 
