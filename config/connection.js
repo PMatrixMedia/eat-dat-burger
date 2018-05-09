@@ -33,7 +33,7 @@ function readData() {
         function (err, results, fields) {
             if (err) throw err;
             else console.log('Selected ' + results.length + ' row(s).');
-            for (i = 0; i < results.length; i++) {
+            for (i = 1; i < results.length; i++) {
                 console.log('Row: ' + JSON.stringify(results[i]));
             }
             console.log('Done.');
@@ -44,7 +44,7 @@ function readData() {
 
 function insertData() {
     
-    conn.query('INSERT INTO burgers (Burger_name) VALUES (?);', ['ham, swiss, mayo,green pepper,onion'],
+    conn.query('INSERT INTO burgers (Burger_name) VALUES (?);', ['ham swiss mayo green pepper onion'],
         function (err, results, fields) {
             if (err) throw err;
             console.log('Inserted ' + results.affectedRows + ' row(s).');
