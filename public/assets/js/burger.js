@@ -11,7 +11,8 @@ $(function() {
     // Send the PUT request.
     $.ajax("/burgers/" + id, {
       type: "PUT",
-        data: { devoured: true }
+        data: newBurgerState
+
     }).then(
       function() {
         console.log("changed devoured to", newBurger);
