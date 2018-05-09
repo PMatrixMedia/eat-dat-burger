@@ -3,15 +3,17 @@ const mysql = require('mysql2');
 
 var config =
     {
-        host: 'restaurantcohort-mysqldbserver.mysql.database.azure.com',
-        user: 'mysqldbuser@restaurantcohort-mysqldbserver',
-        password: 'Smucohort12345',
-        database: 'burger',
+        host: 'otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.co',
+        user: 'bpczbv2q4g5khxzo',
+        password: 'supn3d7jyoml267j',
+        database: 'izhmmav497ocou2w',
         port: 3306,
         ssl: true
     };
+var connstring = 'mysql://bpczbv2q4g5khxzo:supn3d7jyoml267j@otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/izhmmav497ocou2w'
 
-const conn = new mysql.createConnection(config);
+const conn = new mysql.createConnection(connstring);
+
 
 
 conn.connect(
@@ -36,6 +38,26 @@ function readData() {
             }
             console.log('Done.');
         })
+   
 };
+
+function updateData() {
+    conn.query('UPDATE burgers SET Burger_name = ?, devoured = ?'[Burger_name, devoured],
+        function (err, results, fields) {
+            if (err) throw err;
+            else console.log('Updated ' + results.affectedRows + ' row(s).');
+        })
+   
+};
+
+function insertData() {
+    
+    conn.query('INSERT INTO burgers (Burger_name) VALUES (?);', ['prime rib, cheese whiz, mayo,green pepper,onion'],
+        function (err, results, fields) {
+            if (err) throw err;
+            console.log('Inserted ' + results.affectedRows + ' row(s).');
+        })
+};
+
 
 module.exports = conn;

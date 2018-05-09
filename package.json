@@ -15,11 +15,14 @@
     "express-handlebars": "^2.0.1",
     "gulp": "^3.9.1",
     "handlebars": "^4.0.11",
+    "manage-database": "^0.2.1",
     "mysql2": "^1.5.3",
-    "npm": "^6.0.0"
+    "npm": "^6.0.0",
+    "sails": "^1.0.2"
   },
   "devDependencies": {
     "gulp-babel": "^7.0.1",
+    "gulp-db": "0.0.1",
     "handlebars-helper-css": "^0.1.0"
   },
   "repository": {
