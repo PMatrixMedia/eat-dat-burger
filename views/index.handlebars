@@ -1,20 +1,7 @@
 <main>
     <h1 class="display-1">Eat Dat burger</h1>
     <div class="container"
-         <div class="row">
-             <div class=".col-md"
-              <h2 class="display-2">New Burgers</h2>
-               {{#each burgers}}
-               {{#unless this.devoured}}
-              <div>
-              <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
-                      <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
-              </form>
-              </div>
-             {{/unless}}
-        {{/each}}
-      </div>
-       <div class="col md">
+       <div class="row">
         {{#each burgers}}
           {{#if this.devoured}}
             <div class='burgerEaten'>
@@ -29,6 +16,18 @@
   </div>
     <h3 class="display-3">Burgers to be Devoured</h3>
     <div class="row">
+              {{#each burgers}}
+               {{#unless this.devoured}}
+              <div>
+              <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+                      <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
+              </form>
+              </div>
+             {{/unless}}
+        {{/each}}
+      </div>
+      <h4 class="display-4">New Burgers</h4>
+    <div class="row">
     <div class="col md">
         <form class="create-form" action="/burgers" method="POST">
             <div class="form-group">
@@ -39,6 +38,7 @@
         </form>
       </div>
     </div>
-<h4 class="display-4">New Burgers</h4>
+</main>
+
     
     
