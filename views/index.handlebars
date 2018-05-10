@@ -19,7 +19,7 @@
               {{#each burgers}}
                {{#unless this.devoured}}
               <div>
-              <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+              <form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
                       <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
               </form>
               </div>
@@ -29,7 +29,7 @@
       <h4 class="display-4">New Burgers</h4>
     <div class="row">
     <div class="col md">
-        <form class="create-form" action="/burgers" method="POST">
+        <form class="create-form" action="/api/burgers" method="POST">
             <div class="form-group">
                 <label for="ca">Burger Ingredients:</label>
                 <input type="text" id="ca" name="Burger_name">
